@@ -118,7 +118,8 @@ public class Res extends RESTService {
     if(res_condition) {
       JSONObject result = new JSONObject();
       result.put("id", 1321); 
-      result.put("active", true); 
+      result.put("active", true);  
+      result.put("test", 12);
       
 
       return Response.status(HttpURLConnection.HTTP_OK).entity(result.toJSONString()).build();
