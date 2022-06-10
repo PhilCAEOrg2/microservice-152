@@ -118,9 +118,12 @@ public class ResTest {
         
     try {
       c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
-      ClientResponse result = c.sendRequest("GET", mainPath + "/test", "");
+      ClientResponse result = c.sendRequest("GET", mainPath + "/test", """
+""");
       System.out.println("Result of request with id: 223610: " + result.getResponse().trim());
     
+      Assert.assertEquals("[488579]", 409, result.getHttpCode());
+
     } catch (Exception e) {
       e.printStackTrace();
       fail("Exception: " + e);
