@@ -105,6 +105,30 @@ public class ResTest {
   }
 
 
+  /**
+   * 
+   * Second Test for the NewTestCase_ID504095 method.
+   * 
+   */
+  @Test
+  public void testNewTestCase_ID504095() {
+    MiniClient c = new MiniClient();
+    c.setConnectorEndpoint(connector.getHttpEndpoint());
+    
+        
+    try {
+      c.setLogin(AnonymousAgentImpl.IDENTIFIER, "");
+      ClientResponse result = c.sendRequest("GET", mainPath + "/test", "");
+      System.out.println("Result of request with id: 223610: " + result.getResponse().trim());
+    
+    } catch (Exception e) {
+      e.printStackTrace();
+      fail("Exception: " + e);
+    }
+    
+
+    
+  }
 
 
 
